@@ -6,6 +6,12 @@ export const Body = styled.div`
 `
 export const CampaginBox = styled.div`
     flex:1;
-    
-    background:red;
+    min-height:100vh;
+    padding-left:300px;
+    background:#C2D5CC;
 `
+export const Div = styled.div`
+    background:red;
+    height:500px;
+    width:500px;
+    `
