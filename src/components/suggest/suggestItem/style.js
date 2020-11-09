@@ -84,26 +84,28 @@ export const Graph = styled.div`
 	width: 80%;
 	height: 20px;
 	display: flex;
-
 	justify-content: center;
 	align-items: center;
 `;
 
 export const GoodArea = styled.div`
-	width: 50%;
+	width: ${(props) => `${props.width}%`};
 	background-color: #bed9d7;
-	border-radius: 2rem 0rem 0rem 2rem;
+
+	border-radius: ${(props) =>
+		props.width === 100 ? '2rem 2rem 2rem 2rem' : '2rem 0rem 0rem 2rem'};
 `;
 export const BadArea = styled.div`
 	display: flex;
 	justify-content: flex-end;
-	width: 50%;
+	flex: 1;
+	min-width: 0px;
 	border-radius: 0rem 2rem 2rem 0rem;
-
 `;
 export const GoodText = styled.div`
-    padding-left:15px;
+	padding-left: 15px;
 `;
 export const BadText = styled.div`
-    padding-right:15px;
+	padding-right: 15px;
+	border-radius: 0rem 2rem 2rem 0rem;
 `;

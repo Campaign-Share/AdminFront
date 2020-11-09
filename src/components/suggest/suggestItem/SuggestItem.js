@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useState, useCallback} from 'react';
 import * as S from './style';
+import ItemModal from '../suggestItem/itemModal/ItemModal';
 import img from '../../../assets/CampaginTest.png';
 import good from '../../../assets/good.png';
 import bad from '../../../assets/bad.png';
 const SuggestItem = () => {
+	const [modal, setModal] = useState(false);
+	const modalOn = () => {
+		setModal(prev => !prev);
+
+	};
 	return (
-		<S.ItemBox>
+		<S.ItemBox  onClick={modalOn}>
 			<S.MarginItem>
 				<S.Img src={img}></S.Img>
 				<S.NickName>Klairs X jOGUMAN STUDiO</S.NickName>
@@ -16,7 +22,7 @@ const SuggestItem = () => {
 				<S.GoodBox>
 					<S.Good src={good} />
 					<S.Graph>
-						<S.GoodArea>
+						<S.GoodArea width={50}>
 							<S.GoodText>10</S.GoodText>
 						</S.GoodArea>
 						<S.BadArea>
@@ -26,6 +32,7 @@ const SuggestItem = () => {
 					<S.Bad src={bad} />
 				</S.GoodBox>
 			</S.MarginItem>
+			{modal && <ItemModal/>}
 		</S.ItemBox>
 	);
 };

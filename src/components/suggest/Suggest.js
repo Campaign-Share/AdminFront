@@ -9,7 +9,8 @@ const Suggest = () => {
 			<SideBar></SideBar>
 			<S.CampaginBox>
 				<SuggestItemFlex/>
-				
+				<SuggestItemFlex/>
+			
 			</S.CampaginBox>
 		</S.Body>
 	);

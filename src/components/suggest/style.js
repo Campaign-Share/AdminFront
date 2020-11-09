@@ -14,4 +14,5 @@ export const Div = styled.div`
     background:red;
     height:500px;
     width:500px;
+    margin-top:10px;
     `
