@@ -1,15 +1,17 @@
 import React, {useState, useCallback} from 'react';
 import * as S from './style';
-import ItemModal from '../suggestItem/itemModal/ItemModal';
+import {useDispatch, useSelector} from 'react-redux';
 import img from '../../../assets/CampaginTest.png';
 import good from '../../../assets/good.png';
 import bad from '../../../assets/bad.png';
+import ItemModal from '../suggestItem/itemModal/ItemModal';
+import { transformModal } from '../../../modules/SuggestItem';
 const SuggestItem = () => {
-	const [modal, setModal] = useState(false);
-	const modalOn = () => {
-		setModal(prev => !prev);
 
-	};
+	const dispatch =useDispatch();
+	const modalOn = useCallback(() => {
+		dispatch(transformModal());
+	},[]);
 	return (
 		<S.ItemBox  onClick={modalOn}>
 			<S.MarginItem>
@@ -32,7 +34,7 @@ const SuggestItem = () => {
 					<S.Bad src={bad} />
 				</S.GoodBox>
 			</S.MarginItem>
-			{modal && <ItemModal/>}
+			
 		</S.ItemBox>
 	);
 };
