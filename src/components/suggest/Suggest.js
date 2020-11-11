@@ -9,7 +9,6 @@ const Suggest = () => {
 	const modal = useSelector((store) => store.suggestReducer.onModal);
 	const dispatch = useDispatch();
 	const modalOn = useCallback(() => {
-		console.log(1);
 		dispatch(transformModal());
 	}, []);
 	return (
@@ -18,7 +17,7 @@ const Suggest = () => {
 			{modal && <S.ModalBackGround onClick={modalOn} />}
 			<S.CampaginBox>
 				<SuggestItemFlex />
-				<SuggestItemFlex />
+
 			</S.CampaginBox>
 			{modal && <ItemModal />}
 		</S.Body>

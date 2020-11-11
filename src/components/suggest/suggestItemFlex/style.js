@@ -3,10 +3,8 @@ import styled, {createGlobalStyle} from 'styled-components';
 
 export const Box = styled.div`
     width:82vw;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    
+    margin:0 auto;
     padding:0px;
 
 `
@@ -16,5 +14,6 @@ export const FlexBox = styled.div`
     margin:0 auto;
     height:75%;
     display:flex;
+    flex-wrap:wrap;
     justify-content:space-between;
 `
