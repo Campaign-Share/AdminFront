@@ -1,7 +1,7 @@
-// import {combineReducers} from 'redux';
+import {combineReducers} from 'redux';
+import suggestReducer from './SuggestItem';
+const rootReducer = combineReducers({
+    suggestReducer, 
+})
 
-// const rootReducer = combineReducers({
-    
-// })
-
-// export default rootReducer;
+export default rootReducer;

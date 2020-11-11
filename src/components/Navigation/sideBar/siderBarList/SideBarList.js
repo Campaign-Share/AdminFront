@@ -7,13 +7,13 @@ const ItemList = [
 	},
 	{ text: '참여 인증' },
 ];
-const SideBarList = () => {
+const SideBarList = ({num}) => {
 	return (
 		<>
-			{ItemList.map((item) => {
+			{ItemList.map((item, index) => {
 				return (
 					<S.ItemBox activeImg={item.activeImg}>
-						<S.ItemText>{item.text}</S.ItemText>
+						{index === num ? <S.ItemText color={'#707070'}>{item.text}</S.ItemText> : <S.ItemText color={'#FFFFFF'}>{item.text}</S.ItemText>}
 					</S.ItemBox>
 				);
 			})}

@@ -17,5 +17,5 @@ export const ItemText = styled.div`
 	align-items: center;
 	height: 30px;
 	font-size:20px;
-	color: #707070;
+	color: ${props=>props.color};
 `;
