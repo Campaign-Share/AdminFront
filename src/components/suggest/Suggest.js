@@ -15,10 +15,9 @@ const Suggest = () => {
 		<S.Body>
 			<SideBar num={0}></SideBar>
 			{modal && <S.ModalBackGround onClick={modalOn} />}
-			<S.CampaginBox>
-				<SuggestItemFlex />
 
-			</S.CampaginBox>
+			<SuggestItemFlex useGood={true}/>
+
 			{modal && <ItemModal />}
 		</S.Body>
 	);

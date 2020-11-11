@@ -4,11 +4,13 @@ import SuggestItem from '../suggestItem/SuggestItem';
 import * as S from './style';
 import ItemModal from '../suggestItem/itemModal/ItemModal';
 
-const SuggestItemFlex = () => {
+const SuggestItemFlex = ({useGood}) => {
 	return (
+		<S.CampaginBox>
+			
 		<S.Box>
 			<S.FlexBox>
-				<SuggestItem />
+				<SuggestItem useGood={useGood}/>
 				<SuggestItem />
 				<SuggestItem />
 				<SuggestItem />
@@ -28,6 +30,8 @@ const SuggestItemFlex = () => {
 				<SuggestItem />
 			</S.FlexBox>
 		</S.Box>
+		</S.CampaginBox>
+
 	);
 };
 export default SuggestItemFlex;
