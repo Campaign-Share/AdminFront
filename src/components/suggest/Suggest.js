@@ -9,11 +9,12 @@ const Suggest = () => {
 	const modal = useSelector((store) => store.suggestReducer.onModal);
 	const dispatch = useDispatch();
 	const modalOn = useCallback(() => {
+		console.log(1);
 		dispatch(transformModal());
 	}, []);
 	return (
 		<S.Body>
-			<SideBar></SideBar>
+			<SideBar num={0}></SideBar>
 			{modal && <S.ModalBackGround onClick={modalOn} />}
 			<S.CampaginBox>
 				<SuggestItemFlex />
