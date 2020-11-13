@@ -1,19 +1,19 @@
-const MODALDATA = 'MODALDATA';
+const SUGGESTMODALDATA = 'SUGGESTMODALDATA';
 
 const SuggestItemReducer = {
-    onModal : false,
+    suggestOnModal : false,
 }
 
 export const transformModal = () => ({
-    type : MODALDATA
+    type : SUGGESTMODALDATA
 })
 
 const suggestReducer = (state = SuggestItemReducer, action) =>{
     switch(action.type){
-        case MODALDATA:{
+        case SUGGESTMODALDATA:{
             return({
                 ...state,
-                onModal:  !(state.onModal)
+                suggestOnModal:  !(state.suggestOnModal)
             })
         }
         default:{

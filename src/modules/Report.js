@@ -1,20 +1,20 @@
-const MODALDATA = 'MODALDATA';
+const REPORTMODALDATA = 'REPORTMODALDATA';
 
 const reportReducerState = {
-	onModal: false,
+	reportOnModal: false,
 };
 
 export const transformModal = () => ({
-	type: MODALDATA,
+	type: REPORTMODALDATA,
 });
 
 const reportReducer = (state = reportReducerState, action) => {
 	switch (action.type) {
-		case MODALDATA: {
-			return ({
+		case REPORTMODALDATA: {
+			return {
 				...state,
-				onModal: !state.onModal,
-			});
+				reportOnModal: !state.reportOnModal,
+			};
 		}
 		default: {
 			return state;

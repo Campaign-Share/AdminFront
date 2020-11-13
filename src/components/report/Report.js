@@ -5,10 +5,10 @@ import {useSelector} from 'react-redux';
 import ReportList from './reportList/ReportList';
 import ReportModal from './reportModal/ReportModal'
 const Report = ({modalOn}) => {
-	const {onModal} = useSelector((store) => store.reportReducer);
+	const {reportOnModal} = useSelector((store) => store.reportReducer);
 	return (
 		<S.Container>
-			{onModal && <S.ModalBackground onClick={modalOn}/>}
+			{reportOnModal && <S.ModalBackground onClick={modalOn}/>}
 			<SideBar num={1}></SideBar>
 			<S.ReportContainer>
 				<S.MarginContainer>

@@ -6,7 +6,7 @@ import { transformModal } from '../../modules/SuggestItem';
 import { useSelector, useDispatch } from 'react-redux';
 import ItemModal from './suggestItem/itemModal/ItemModal';
 const Suggest = () => {
-	const modal = useSelector((store) => store.suggestReducer.onModal);
+	const modal = useSelector((store) => store.suggestReducer.suggestOnModal);
 	const dispatch = useDispatch();
 	const modalOn = useCallback(() => {
 		dispatch(transformModal());

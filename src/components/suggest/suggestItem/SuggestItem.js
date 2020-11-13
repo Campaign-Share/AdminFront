@@ -14,8 +14,8 @@ const SuggestItem = ({ useGood }) => {
 		dispatch(transformModal());
 	}, []);
 	const goToCertifyItem = () => {
-		//history.push
-	}
+		history.push('./certifyDetail');
+	};
 	return (
 		<S.ItemBox onClick={useGood ? modalOn : goToCertifyItem}>
 			<S.MarginItem>
