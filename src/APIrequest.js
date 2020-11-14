@@ -13,7 +13,9 @@ export const requestApi = async (url, body, header, method) => {
 		});
 		return res;
 	} catch (err) {
-		console.log(err.response.status);
+		// console.log(err.response.status);
+		if(err.response.status){ throw err.response.status}
+		else console.log(err.status.res);
 	}
 };
 export const requestApiWithAccessToken = async (url, body, header, method) => {
