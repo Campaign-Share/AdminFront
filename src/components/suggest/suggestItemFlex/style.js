@@ -3,12 +3,16 @@ import styled, {createGlobalStyle} from 'styled-components';
 
 export const Box = styled.div`
     width:82vw;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    
+    margin:0 auto;
     padding:0px;
 
+`
+export const CampaginBox = styled.div`
+    flex:1;
+    min-height:100vh;
+    padding-left:300px;
+    background:#C2D5CC;
 `
 
 export const FlexBox = styled.div`
@@ -16,5 +20,6 @@ export const FlexBox = styled.div`
     margin:0 auto;
     height:75%;
     display:flex;
+    flex-wrap:wrap;
     justify-content:space-between;
 `

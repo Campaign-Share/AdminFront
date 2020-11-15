@@ -6,20 +6,18 @@ import { transformModal } from '../../modules/SuggestItem';
 import { useSelector, useDispatch } from 'react-redux';
 import ItemModal from './suggestItem/itemModal/ItemModal';
 const Suggest = () => {
-	const modal = useSelector((store) => store.suggestReducer.onModal);
+	const modal = useSelector((store) => store.suggestReducer.suggestOnModal);
 	const dispatch = useDispatch();
 	const modalOn = useCallback(() => {
-		console.log(1);
 		dispatch(transformModal());
 	}, []);
 	return (
 		<S.Body>
 			<SideBar num={0}></SideBar>
 			{modal && <S.ModalBackGround onClick={modalOn} />}
-			<S.CampaginBox>
-				<SuggestItemFlex />
-				<SuggestItemFlex />
-			</S.CampaginBox>
+
+			<SuggestItemFlex useGood={true}/>
+
 			{modal && <ItemModal />}
 		</S.Body>
 	);

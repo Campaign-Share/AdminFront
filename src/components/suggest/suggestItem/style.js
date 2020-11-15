@@ -6,7 +6,9 @@ export const ItemBox = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+	margin-top:90px;
+	height:75vh;
+	margin-bottom:40px;
 `;
 export const MarginItem = styled.div`
 	width: 85%;
