@@ -1,10 +1,12 @@
 import React from 'react';
 import * as S from './style';
+import {useSelector} from 'react-redux';
 
 const DiscritionBox = () => {
+	const {title, sub_title,introduction,nick_name} = useSelector((store) => store.CampaginInfoReducer);
 	return (
 		<S.DisBox>
-			<S.UserName>Klairs X jOGUMAN STUDiO</S.UserName>
+			<S.UserName>{sub_title}</S.UserName>
 			<S.TitleBox>
 				<S.SmallTitle>클레어스 6th 기부 프로젝트</S.SmallTitle>
 				<S.Title>GO CRUELTY FREE: LET US BE!</S.Title>

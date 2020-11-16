@@ -6,9 +6,9 @@ export const ItemBox = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top:90px;
-	height:75vh;
-	margin-bottom:40px;
+	margin-top: 90px;
+	height: 75vh;
+	margin-bottom: 40px;
 `;
 export const MarginItem = styled.div`
 	width: 85%;
@@ -23,7 +23,7 @@ export const Img = styled.img`
 	background-size: cover;
 `;
 export const NickName = styled.div`
-	font-size: 12px;
+	font-size: 15px;
 	border: none;
 	display: inline-block;
 	border-bottom: 1px solid #b8d4c8;
@@ -91,9 +91,16 @@ export const Graph = styled.div`
 `;
 
 export const GoodArea = styled.div`
-	width: ${(props) => `${props.width}%`};
-	background-color: #bed9d7;
+	width: ${(props) => {
+		if (props.width) {
+			return `${props.width}%`;
+		} else return '0%';
 
+	}};
+	background-color: #bed9d7;
+	height: 20px;
+	display: flex;
+	align-items: center;
 	border-radius: ${(props) =>
 		props.width === 100 ? '2rem 2rem 2rem 2rem' : '2rem 0rem 0rem 2rem'};
 `;
