@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const BASE_URL = 'http://15.164.206.37:80';
 
-
 export const requestApi = async (url, body, header, method) => {
 	try {
 		const res = await axios({
@@ -13,9 +12,9 @@ export const requestApi = async (url, body, header, method) => {
 		});
 		return res;
 	} catch (err) {
-		// console.log(err.response.status);
-		if(err.response.status){ throw err.response.status}
-		else console.log(err.status.res);
+		if (err.response.status) {
+			throw err.response.status;
+		} else alert('네트워크 연결을 확인해 주세요');
 	}
 };
 export const requestApiWithAccessToken = async (url, body, header, method) => {
@@ -31,7 +30,9 @@ export const requestApiWithAccessToken = async (url, body, header, method) => {
 			method,
 		);
 		return res;
-	} catch (err) {
-	
+	} catch (errStatus) {
+		if (errStatus) {
+			throw errStatus;
+		}
 	}
 };

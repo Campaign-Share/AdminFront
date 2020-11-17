@@ -10,25 +10,45 @@ import { useHistory } from 'react-router-dom';
 const SuggestItem = ({ useGood, listItem, nick_name }) => {
 	const dispatch = useDispatch();
 	const history = useHistory();
-	const modalOn = useCallback(() => {
-		dispatch(transformModal());
+	const modalOn = useCallback((campaginInfo) => {
+		dispatch(transformModal(campaginInfo));
 	}, []);
 	const goToCertifyItem = () => {
 		history.push('./certifyDetail');
 	};
-	useEffect(() => {
-		dispatch(setCampaginInfo(listItem));
-	}, []);
+	// useEffect(() => {
+	// 	dispatch(setCampaginInfo(listItem));
+	// }, []);
+	//원래는 리덕스에다가 상위에서 받아온 listItem 정보를 저장한 후 selector로 참조 -> 전역 상태이기 때문에 마지막으로 들어온 listItem으로 
+	//상태가 초기화되며 기존에 참조하던 리스트의 내용도 변함
 	const {
 		post_uri,
+		campaign_uuid,
 		sub_title,
 		title,
 		agree_number,
 		disagree_number,
-	} = useSelector((store) => store.CampaginInfoReducer);
+		introduction,
+	} = listItem;
 
 	return (
-		<S.ItemBox onClick={useGood ? modalOn : goToCertifyItem}>
+		<S.ItemBox
+			onClick={
+				useGood
+					? () => {
+							modalOn({
+								title,
+								post_uri,
+								sub_title,
+								agree_number,
+								disagree_number,
+								introduction,
+								nick_name,
+								campaign_uuid
+							});
+					  }
+					: goToCertifyItem
+			}>
 			<S.MarginItem>
 				<S.Img
 					src={`https://campaignshare.s3.ap-northeast-2.amazonaws.com/${post_uri}`}></S.Img>

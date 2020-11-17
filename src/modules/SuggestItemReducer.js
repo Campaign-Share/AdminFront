@@ -4,10 +4,12 @@ const SET_CAMPAGIN_LIST = 'SET_CAMPAGIN_LIST';
 const SuggestItemReducer = {
 	suggestOnModal: false,
 	list: [],
+	info: '',
 };
 
-export const transformModal = () => ({
+export const transformModal = (payload) => ({
 	type: SUGGESTMODALDATA,
+	payload,
 });
 
 export const setList = (payload) => ({
@@ -21,13 +23,14 @@ const suggestReducer = (state = SuggestItemReducer, action) => {
 			return {
 				...state,
 				suggestOnModal: !state.suggestOnModal,
+				info: action.payload,
 			};
 		}
 		case SET_CAMPAGIN_LIST: {
-			return ({
+			return {
 				...state,
 				list: action.payload,
-			});
+			};
 		}
 		default: {
 			return state;

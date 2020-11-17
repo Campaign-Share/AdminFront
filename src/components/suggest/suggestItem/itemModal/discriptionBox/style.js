@@ -48,7 +48,7 @@ export const Button = styled.button`
 
     height:34px;
     outline:none;
-    background-color:#9DC3C1;
+    background-color:${props=>props.color};
     border:none;
     color:#FFFFFF;
     font-size:17px;

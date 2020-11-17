@@ -9,6 +9,7 @@ export const ItemBox = styled.div`
 	margin-top: 90px;
 	height: 75vh;
 	margin-bottom: 40px;
+	margin-right:35px;
 `;
 export const MarginItem = styled.div`
 	width: 85%;

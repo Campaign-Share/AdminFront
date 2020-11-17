@@ -25,7 +25,7 @@ const SuggestItemFlex = ({ list }) => {
 		<S.CampaginBox>
 			<S.Box>
 				<S.FlexBox>
-					{nick_name[0] && list.map((element, index) => (
+					{nick_name[0] && list.map((element, index) => (//여기서 맵돌리면서 캠페인 하나씩 생성
 						<SuggestItem useGood={true} listItem={element} key={index} nick_name={nick_name[index].nick_name}/>
 					))}
 				</S.FlexBox>

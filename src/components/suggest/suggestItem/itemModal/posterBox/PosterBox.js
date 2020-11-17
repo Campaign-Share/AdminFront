@@ -1,11 +1,10 @@
 import React from 'react';
 import * as S from './style';
-import CampaginTest from '../../../../../assets/CampaginTest.png';
 import good from '../../../../../assets/good.png';
 import bad from '../../../../../assets/bad.png';
 import { useSelector } from 'react-redux';
 const PosterBox = () => {
-	const {post_uri, agree_number, disagree_number} = useSelector((store) => store.CampaginInfoReducer); 
+	const {post_uri, agree_number, disagree_number} = useSelector((store) => store.suggestReducer.info); 
 	return (
 		<S.PosterBox>
 			<S.PosterMargin>

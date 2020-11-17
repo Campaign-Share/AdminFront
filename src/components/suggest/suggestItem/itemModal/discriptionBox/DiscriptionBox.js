@@ -1,29 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './style';
-import {useSelector} from 'react-redux';
-
+import { useSelector } from 'react-redux';
+import { requestApiWithAccessToken } from '../../../../../APIrequest';
 const DiscritionBox = () => {
-	const {title, sub_title,introduction,nick_name} = useSelector((store) => store.CampaginInfoReducer);
+	const {
+		nick_name,
+		sub_title,
+		title,
+		introduction,
+		campaign_uuid,
+	} = useSelector((store) => store.suggestReducer.info);
+	const [onClicked, setOnClicked] = useState('#9DC3C1');
+	const discriminateCampaign = (e) => {
+		if (e.target.id === 'approve') {
+			try{
+				requestApiWithAccessToken(
+					`/v1/campaigns/uuid/${campaign_uuid}/actions/approve`,
+					{},
+					{},
+					'post',
+				).then((res) => {
+					if (res.status === 200) {
+						alert('수락되었습니다.');
+						setOnClicked('#808B8B');
+					} 
+					else {
+						console.log(res);
+						setOnClicked('#808B8B');
+					}
+				});
+			}catch(err){
+				console.log("asddas")
+				console.log(err);
+			}
+		} else {
+			requestApiWithAccessToken(
+				`/v1/campaigns/uuid/${campaign_uuid}/actions/reject`,
+				{},
+				{},
+				'post',
+			).then((res) => {
+				if (res.status === 200) {
+					alert('거절되었습니다.');
+				} else {
+					console.log(res);
+				}
+			});
+		}
+	};
 	return (
 		<S.DisBox>
-			<S.UserName>{sub_title}</S.UserName>
+			<S.UserName>{nick_name}</S.UserName>
 			<S.TitleBox>
-				<S.SmallTitle>클레어스 6th 기부 프로젝트</S.SmallTitle>
-				<S.Title>GO CRUELTY FREE: LET US BE!</S.Title>
-				<S.Discription>
-					세계 실험동물의 날을 맞아 진행하는 GO CRUELTY FREE: LET US BE!는
-					클레어스의 여섯 번째 기부 프로젝트입니다. 반려동물과의 산책이 컨셉인
-					캠페인 굿즈는 풉백으로 사용 가능한 미니 파우치, 손수건, 드링크 백
-					등으로 조구만 스튜디오의 일러스트가 그러져있습니다. 클레어스
-					공식몰에서 캠페인 굿즈를 구매하면 자동으로 참여할 수 있습니다. 더불어
-					SNS 제품 리뷰, 해시태그 포스팅 등의 방법으로 캠페인에 동참하실 수
-					있습니다.{' '}
-				</S.Discription>
-                <S.ButtonBox>
-                <S.Button>수락</S.Button>
-                <S.Button>거절</S.Button>
-                </S.ButtonBox>
-                
+				<S.SmallTitle>{sub_title}</S.SmallTitle>
+				<S.Title>{title}</S.Title>
+				<S.Discription>{introduction}</S.Discription>
+				<S.ButtonBox>
+					<S.Button
+						onClick={discriminateCampaign}
+						id="approve"
+						color={onClicked}>
+						수락
+					</S.Button>
+					<S.Button
+						onClick={discriminateCampaign}
+						id="reject"
+						color={onClicked}>
+						거절
+					</S.Button>
+				</S.ButtonBox>
 			</S.TitleBox>
 		</S.DisBox>
 	);
