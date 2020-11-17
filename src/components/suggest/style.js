@@ -12,12 +12,7 @@ export const ModalBackGround = styled.div`
   width: 100vw;
   height: 100vh;
 `
-export const CampaginBox = styled.div`
-    flex:1;
-    min-height:100vh;
-    padding-left:300px;
-    background:#C2D5CC;
-`
+
 export const Div = styled.div`
     background:red;
     height:500px;

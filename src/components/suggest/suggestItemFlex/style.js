@@ -8,6 +8,12 @@ export const Box = styled.div`
     padding:0px;
 
 `
+export const CampaginBox = styled.div`
+    flex:1;
+    min-height:100vh;
+    padding-left:300px;
+    background:#C2D5CC;
+`
 
 export const FlexBox = styled.div`
     width:85%;
@@ -15,5 +21,5 @@ export const FlexBox = styled.div`
     height:75%;
     display:flex;
     flex-wrap:wrap;
-    justify-content:space-between;
+    
 `

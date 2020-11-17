@@ -3,10 +3,10 @@ import ReportModal from '../reportModal/ReportModal';
 import * as S from './style';
 import {useSelector } from 'react-redux';
 const ReportList = ({modalOn}) => {
-	const {onModal} = useSelector((store) => store.reportReducer);
+	const {reportOnModal} = useSelector((store) => store.reportReducer);
 	return (
         <>
-		{onModal && <ReportModal/>}
+		{reportOnModal && <ReportModal/>}
 		<S.Item onClick={modalOn}>
 			<S.Element>GO CRUELTY FREE: LET US BE!</S.Element>
 			<S.Element>김해린</S.Element>
