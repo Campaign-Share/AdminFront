@@ -12,9 +12,11 @@ export const requestApi = async (url, body, header, method) => {
 		});
 		return res;
 	} catch (err) {
-		if (err.response.status) {
+		if (err.response) {
 			throw err.response.status;
-		} else alert('네트워크 연결을 확인해 주세요');
+		}
+		alert('네트워크 연결을 확인해 주세요');
+		throw null;
 	}
 };
 export const requestApiWithAccessToken = async (url, body, header, method) => {
@@ -31,8 +33,6 @@ export const requestApiWithAccessToken = async (url, body, header, method) => {
 		);
 		return res;
 	} catch (errStatus) {
-		if (errStatus) {
-			throw errStatus;
-		}
+		throw errStatus;
 	}
 };

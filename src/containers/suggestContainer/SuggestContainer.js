@@ -12,7 +12,7 @@ const SuggestContainer = () => {
 				'http://15.164.206.37:80/v1/campaigns/sorted-by/famous',
 				{
 					headers: { Authorization: localStorage.getItem('access_token') },
-					params: { start: 9, count: 50 },
+					params: { start: 9, count: 50, state:'pending' },
 				},
 			);
 			dispatch(setList(res.data.campaigns));
