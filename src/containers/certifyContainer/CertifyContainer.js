@@ -1,7 +1,7 @@
 import React from 'react';
 import Certify from '../../components/certify/Certify';
 import {useDispatch} from 'react-redux';
-import transformModal from '../../modules/Certify';
+import {transformModal} from '../../modules/CertifyReducer';
 const CertifyContainer = () => {
 	return <Certify />;
 };

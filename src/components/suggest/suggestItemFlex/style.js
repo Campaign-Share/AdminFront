@@ -21,5 +21,5 @@ export const FlexBox = styled.div`
     height:75%;
     display:flex;
     flex-wrap:wrap;
-    justify-content:space-between;
+    
 `

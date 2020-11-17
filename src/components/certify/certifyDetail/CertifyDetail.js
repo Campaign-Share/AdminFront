@@ -4,7 +4,7 @@ import SideBar from '../../Navigation/sideBar/SideBar';
 import CampaginInfo from './campaginInfo/CampaginInfo';
 import List from './list/List';
 import {useDispatch,useSelector} from 'react-redux';
-import {transformModal} from '../../../modules/Certify';
+import {transformModal} from '../../../modules/CertifyReducer';
 const CertifyDetail = () => {
 	const dispatch = useDispatch();
 	const onModal = () => {

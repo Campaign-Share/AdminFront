@@ -63,7 +63,12 @@ export const Graph = styled.div`
 `;
 
 export const GoodArea = styled.div`
-	width: ${(props) => `${props.width}%`};
+	width: ${(props) => {
+		if (props.width) {
+			return `${props.width}%`;
+		} else return '0%';
+
+	}};
 	background-color: #bed9d7;
 	border-radius: ${(props) =>
 		props.width === 100 ? '2rem 2rem 2rem 2rem' : '2rem 0rem 0rem 2rem'};
