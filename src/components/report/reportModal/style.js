@@ -59,7 +59,7 @@ export const TailBox = styled.div`
 	justify-content: space-around;
 `;
 export const Button = styled.div`
-	background-color: #9dc3c1;
+	background-color:${props=>props.color};
 	cursor: pointer;
 	color: white;
 	display: flex;
