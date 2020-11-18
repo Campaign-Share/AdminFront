@@ -34,7 +34,7 @@ const Report = ({ modalOn }) => {
 						'post',
 					);
 
-					setUserDataList(userRes.data.user_informs);//유저아이디 알아오기
+					setUserDataList(userRes.data.user_informs);
 				})();
 			} catch (err) {
 				console.log(err);
