@@ -2,11 +2,13 @@ const REPORTMODALDATA = 'REPORTMODALDATA';
 const GETREPORTLIST = 'GETREPORTLIST';
 const reportReducerState = {
 	reportOnModal: false,
-	reportList : []
+	reportModalData: {},	
+	reportList:[]
 };
 
-export const transformModal = () => ({
+export const transReportformModal = (payload) => ({
 	type: REPORTMODALDATA,
+	payload
 });
 
 export const getReportList = (payload) => ({
@@ -20,6 +22,7 @@ const reportReducer = (state = reportReducerState, action) => {
 			return {
 				...state,
 				reportOnModal: !state.reportOnModal,
+				reportModalData : action.payload
 			};
 		}
 		case GETREPORTLIST :{

@@ -13,11 +13,15 @@ export const Item = styled.div`
     align-items:center;
 `;  
 export const Element = styled.div`
-    width:20%;
-    height:80px;
+        width: 20%;
+    height: 80px;
     cursor: pointer;
-        display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:15px;
+    display: block;
+    margin: 0 auto;
+    text-overflow: ellipsis;
+    margin-top: 54px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 15px;
 `
