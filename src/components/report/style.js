@@ -13,7 +13,7 @@ export const ModalBackground = styled.div`
 
 export const ReportContainer = styled.div`
 	padding-left: 300px;
-
+	min-height:100vh;
 	flex: 1;
 	background-color: #c2d5cc;
 `;

@@ -1,14 +1,16 @@
 import React from 'react';
 import * as S from './style';
 import SideBar from '../Navigation/sideBar/SideBar';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import ReportList from './reportList/ReportList';
-import ReportModal from './reportModal/ReportModal'
-const Report = ({modalOn}) => {
-	const {reportOnModal} = useSelector((store) => store.reportReducer);
+import ReportModal from './reportModal/ReportModal';
+const Report = ({ modalOn }) => {
+	const { reportOnModal, reportList } = useSelector(
+		(store) => store.reportReducer,
+	);
 	return (
 		<S.Container>
-			{reportOnModal && <S.ModalBackground onClick={modalOn}/>}
+			{reportOnModal && <S.ModalBackground onClick={modalOn} />}
 			<SideBar num={1}></SideBar>
 			<S.ReportContainer>
 				<S.MarginContainer>
@@ -18,10 +20,10 @@ const Report = ({modalOn}) => {
 						<S.Element>분야</S.Element>
 						<S.Element>사유</S.Element>
 					</S.TitleNav>
-					<ReportList modalOn = {modalOn}/>
+					{reportList.length > 0 &&
+						reportList.map((element) => <ReportList modalOn={modalOn} element={element} />)}
 				</S.MarginContainer>
 			</S.ReportContainer>
-			
 		</S.Container>
 	);
 };
