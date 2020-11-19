@@ -94,7 +94,7 @@ export const Graph = styled.div`
 export const GoodArea = styled.div`
 	width: ${(props) => {
 		if (props.width) {
-			return `${props.width}%`;
+			return `${props.width * 100}%`;
 		} else return '0%';
 
 	}};
@@ -103,7 +103,7 @@ export const GoodArea = styled.div`
 	display: flex;
 	align-items: center;
 	border-radius: ${(props) =>
-		props.width === 100 ? '2rem 2rem 2rem 2rem' : '2rem 0rem 0rem 2rem'};
+		props.width === 1 ? '2rem 2rem 2rem 2rem' : '2rem 0rem 0rem 2rem'};
 `;
 export const BadArea = styled.div`
 	display: flex;

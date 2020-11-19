@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	display: flex;
-    height:100vh;
-    background-color:#C2D5CC;
+	height: 100vh;
+	background-color: #c2d5cc;
 `;
 export const DetailContainer = styled.div`
 	flex: 1;
@@ -17,23 +17,28 @@ export const Box = styled.div`
 	background-color: white;
 	height: 80vh;
 	width: 70vw;
-    display:flex;
+	display: flex;
 	border: 1px solid #707070;
 `;
-export  const Line = styled.div`
-    width:1px;
-    height:90%;
-    background-color:#707070;
-    display:flex;
-    align-items:center;
-    margin-top:3%;
-`
+export const Line = styled.div`
+	width: 1px;
+	height: 90%;
+	background-color: #707070;
+	display: flex;
+	align-items: center;
+	margin-top: 3%;
+`;
 export const ModalBackground = styled.div`
-     background-color: rgb(43, 40, 40, 0.5);
-  position: fixed;
+	background-color: rgb(43, 40, 40, 0.5);
+	position: fixed;
 
-  z-index:3;
-  width: 100vw;
-  height: 100vh;
-    
-`
+	z-index: 3;
+	width: 100vw;
+	height: 100vh;
+`;
+export const ListContainer = styled.div`
+	margin-top: 30px;
+
+	flex: 1;
+	overflow: auto;
+`;

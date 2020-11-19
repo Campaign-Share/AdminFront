@@ -1,20 +1,17 @@
 import React from 'react';
 import * as S from './style';
 import Modal from '../modal/Modal';
-import {useDispatch, useSelector} from 'react-redux';
-import {transformModal} from '../../../../modules/CertifyReducer';
-const List = ({certifyOnModal, onModal}) => {
-
+import { useDispatch, useSelector } from 'react-redux';
+import { transformModal } from '../../../../modules/CertifyReducer';
+const List = ({ certifyOnModal, onModal,ele }) => {
 	return (
-		<S.Container>
-			
-			{certifyOnModal && <Modal/>}
-			<S.ItemBox onClick={onModal}>
-				<S.Name>김해린</S.Name>
-				<S.ViewDiscription>설명??????</S.ViewDiscription>
-				<S.File>첨부파일</S.File>
+		<>
+			{certifyOnModal && <Modal />}
+			<S.ItemBox onClick={()=>{onModal(ele)}}>
+				<S.Name>{ele.user_name}</S.Name>
+				<S.ViewDiscription>{ele.introduction}</S.ViewDiscription>
 			</S.ItemBox>
-		</S.Container>
+		</>
 	);
 };
 export default List;

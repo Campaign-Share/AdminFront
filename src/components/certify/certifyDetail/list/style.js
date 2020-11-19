@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-    margin-top:30px;
-    
-    flex:1;
-    overflow:auto;
-`;
+
 export const ItemBox = styled.div`
     border-radius:2rem;
     cursor:pointer;

@@ -65,7 +65,7 @@ export const Graph = styled.div`
 export const GoodArea = styled.div`
 	width: ${(props) => {
 		if (props.width) {
-			return `${props.width}%`;
+			return `${props.width*100}%`;
 		} else return '0%';
 
 	}};
