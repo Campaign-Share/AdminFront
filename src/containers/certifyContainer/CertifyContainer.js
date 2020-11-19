@@ -10,10 +10,10 @@ const CertifyContainer = () => {
 		(async () => {
 			// const res = await requestApiWithAccessToken('/v1/campaigns/sorted-by/famous',{start:1, count:30,state:'approved'},{},)
 			const res = await axios.get(
-				'http://15.164.206.37:80/v1/campaigns/sorted-by/famous',
+				'http://15.164.206.37:80/v1/campaigns/sorted-by/pending-participation',
 				{
 					headers: { Authorization: localStorage.getItem('access_token') },
-					params: { start: 9, count: 50, state: 'approved' },
+					params: { start: 0, count: 50 },
 				},
 			);
 			dispatch(getCampaginList(res.data.campaigns));

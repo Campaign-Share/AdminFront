@@ -10,7 +10,6 @@ const List = ({ certifyOnModal, onModal,ele }) => {
 			<S.ItemBox onClick={()=>{onModal(ele)}}>
 				<S.Name>{ele.user_name}</S.Name>
 				<S.ViewDiscription>{ele.introduction}</S.ViewDiscription>
-				<S.File>첨부파일</S.File>
 			</S.ItemBox>
 		</>
 	);

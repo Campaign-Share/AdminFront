@@ -14,7 +14,6 @@ const SuggestItem = ({ useGood, listItem, nick_name }) => {
 		dispatch(transformModal(campaginInfo));
 	}, []);
 	const goToCertifyItem = () => {
-		console.log(listItem.campaign_uuid);
 		history.push(`./certifyDetail/${listItem.campaign_uuid}`);
 	};
 	// useEffect(() => {
@@ -31,7 +30,7 @@ const SuggestItem = ({ useGood, listItem, nick_name }) => {
 		disagree_number,
 		introduction,
 	} = listItem;
-
+	console.log(disagree_number);
 	return (
 		<S.ItemBox
 			onClick={
@@ -66,7 +65,7 @@ const SuggestItem = ({ useGood, listItem, nick_name }) => {
 								width={agree_number / (agree_number + disagree_number)}>
 								<S.GoodText>{agree_number}</S.GoodText>
 							</S.GoodArea>
-							<S.BadArea>
+							<S.BadArea >
 								<S.BadText>{disagree_number}</S.BadText>
 							</S.BadArea>
 						</S.Graph>

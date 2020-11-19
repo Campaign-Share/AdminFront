@@ -36,7 +36,7 @@ export const Discription = styled.div`
 	overflow: auto;
 	border: 1px solid #a8a8a8;
 `;
-export const File = styled.a`
+export const File = styled.div`
 	height: 5%;
 	padding-top: 5px;
 	padding-bottom:5px;
@@ -48,8 +48,8 @@ export const File = styled.a`
 	margin-top: 3%;
 	display: flex;
 	align-items:center;
-	text-decoration:none;
 	color:black;
+	cursor:pointer;
 
 `;
 export const ButtonBox = styled.div`
@@ -61,9 +61,10 @@ export const ButtonBox = styled.div`
 	margin-top: 5%;
 `;
 export const Button = styled.div`
-	background-color: #9dc3c1;
+	background-color: ${props => props.color};
 	color: white;
 	display: flex;
+	cursor:pointer;
 	justify-content: center;
 	align-items: center;
 	width: 80px;
