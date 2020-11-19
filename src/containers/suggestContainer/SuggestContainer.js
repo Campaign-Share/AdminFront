@@ -16,6 +16,7 @@ const SuggestContainer = () => {
 				},
 			);
 			dispatch(setList(res.data.campaigns));
+			console.log(res.data.campaigns)
 		})();
 	}, []);
 	const {list} = useSelector(store=> store.suggestReducer)
