@@ -17,7 +17,7 @@ const Suggest = ({list}) => {
 			<SideBar num={0}></SideBar>
 			{modal && <S.ModalBackGround onClick={modalOn} />}
 
-			<SuggestItemFlex list={list}/>
+			<SuggestItemFlex list={list} useGood={true}/>
 
 			{modal && <ItemModal />}
 		</S.Body>

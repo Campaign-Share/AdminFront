@@ -12,7 +12,7 @@ const Routing = () => {
             <Route path="/suggest" exact component={SuggestContainer}/>
 			<Route path="/report" exact component={ReportContainer}/>
 			<Route path="/certify" exact component={CertifyContainer}/>
-			<Route path="/certifyDetail" exact component={CertifyDetailContainer}/>
+			<Route path="/certifyDetail/:campaginUUID" exact component={CertifyDetailContainer}/>
 		</Switch>
 	);
 };

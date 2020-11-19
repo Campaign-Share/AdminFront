@@ -14,7 +14,8 @@ const SuggestItem = ({ useGood, listItem, nick_name }) => {
 		dispatch(transformModal(campaginInfo));
 	}, []);
 	const goToCertifyItem = () => {
-		history.push('./certifyDetail');
+		console.log(listItem.campaign_uuid);
+		history.push(`./certifyDetail/${listItem.campaign_uuid}`);
 	};
 	// useEffect(() => {
 	// 	dispatch(setCampaginInfo(listItem));
@@ -47,7 +48,7 @@ const SuggestItem = ({ useGood, listItem, nick_name }) => {
 								campaign_uuid
 							});
 					  }
-					: goToCertifyItem
+					: ()=>{goToCertifyItem()}
 			}>
 			<S.MarginItem>
 				<S.Img
