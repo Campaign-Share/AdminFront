@@ -9,6 +9,7 @@ export const ModalBackground = styled.div`
   z-index:3;
   width: 100vw;
   height: 100vh;
+  overflow-y:auto;
 `
 
 export const ReportContainer = styled.div`
@@ -19,6 +20,8 @@ export const ReportContainer = styled.div`
 `;
 export const MarginContainer = styled.div`
 	width: 92%;
+
+    overflow-y: hidden;
 
 	margin: 0 auto;
 `;

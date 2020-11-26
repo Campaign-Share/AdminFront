@@ -9,7 +9,7 @@ export const Item = styled.div`
     justify-content:space-around;
     margin-top:10px;
     cursor: pointer;
-    margin-bottom:10px;
+    margin-bottom:20px;
     align-items:center;
 `;  
 export const Element = styled.div`

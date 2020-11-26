@@ -29,7 +29,8 @@ const suggestReducer = (state = SuggestItemReducer, action) => {
 		case SET_CAMPAGIN_LIST: {
 			return {
 				...state,
-				list: action.payload,
+				list: state.list.concat(action.payload),
+				// list:action.payload,
 			};
 		}
 		default: {

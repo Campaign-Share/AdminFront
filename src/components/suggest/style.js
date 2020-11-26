@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Body = styled.div`
     width:100vw;
     display:flex;
+    height:100vh;
 `
 export const ModalBackGround = styled.div`
   background-color: rgb(43, 40, 40, 0.5);

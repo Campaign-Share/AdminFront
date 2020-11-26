@@ -12,7 +12,7 @@ const ReportContainer = () => {
 		(async () => {
 			try {
 				const res = await axios.get(
-					'http://15.164.206.37:80/v1/reports/sorted-by/create-time',
+					'http://52.79.186.241/v1/reports/sorted-by/create-time',
 					{
 						headers: { Authorization: localStorage.getItem('access_token') },
 						params: { start: 0, count: 50, state: 'pending' },

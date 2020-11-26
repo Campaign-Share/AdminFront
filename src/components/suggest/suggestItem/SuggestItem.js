@@ -30,7 +30,6 @@ const SuggestItem = ({ useGood, listItem, nick_name }) => {
 		disagree_number,
 		introduction,
 	} = listItem;
-	console.log(disagree_number);
 	return (
 		<S.ItemBox
 			onClick={
