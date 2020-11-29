@@ -45,7 +45,7 @@ const CertifyReducer = (state = certifyState, action) => {
 		case GETCAMPAGINLIST:
 			return {
 				...state,
-				list: action.payload,
+				list: state.list.concat(action.payload),
 			};
 		case GETCERTIFYPERSON:
 			return {
