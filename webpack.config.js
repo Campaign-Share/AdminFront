@@ -7,8 +7,8 @@ module.exports = {
 	mode: 'development',
 	entry: ['babel-polyfill', './src/index.js'],
 	output: {
-		path: __dirname + '/dist',
-		filename: 'bundle.[hash].js',
+		path: __dirname + '/s3',
+		filename: 'bundle.min.js',
 		publicPath: '/',
 	},
 	module: {
