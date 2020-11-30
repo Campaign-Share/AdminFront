@@ -16,8 +16,7 @@ const SuggestItemFlex = ({ list, useGood }) => {
 	const [length, setLength] = useState({ start: 0, count: 6 });
 	const { nick_name } = useSelector((store) =>
 		useGood ? store.CampaginInfoReducer : store.CertifyReducer,
-	);
-	console.log(list);
+	);//닉네임 저장
 	useEffect(() => {
 		if (length.start === 0) getData();
 		return () => {
@@ -25,7 +24,7 @@ const SuggestItemFlex = ({ list, useGood }) => {
 				? dispatch(setList({ start: false }))
 				: dispatch(getCampaginList({ start: false }));
 		};
-	}, []);
+	}, []);//처음 무한스크롤 리스트 저장
 
 	useEffect(() => {
 		const user_uuidList = list.map((ele, index) => ele.user_uuid);
@@ -41,7 +40,7 @@ const SuggestItemFlex = ({ list, useGood }) => {
 					: dispatch(getCertifyPerson(res.data.user_informs));
 			});
 		}
-	}, [list, length]);
+	}, [list, length]);//user_uuid로 닉네임 조회
 
 	const getData = useCallback(async () => {
 		setLength((prev) => ({
@@ -61,7 +60,7 @@ const SuggestItemFlex = ({ list, useGood }) => {
 		useGood
 			? dispatch(setList({ listArr: res.data.campaigns, start: true }))
 			: dispatch(getCampaginList({ listArr: res.data.campaigns, start: true }));
-	}, [length]);
+	}, [length]);//무한스크롤 저장
 
 	const handleScroll = useCallback(
 		(e) => {
@@ -78,7 +77,7 @@ const SuggestItemFlex = ({ list, useGood }) => {
 			}
 		},
 		[length],
-	);
+	);//무한스크롤 이벤트 발생
 
 	return (
 		<S.CampaginBox onScroll={handleScroll}>

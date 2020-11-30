@@ -15,7 +15,7 @@ const ReportContainer = () => {
 					'http://52.79.186.241/v1/reports/sorted-by/create-time',
 					{
 						headers: { Authorization: localStorage.getItem('access_token') },
-						params: { start: 0, count: 50, state: 'pending' },
+						params: { start: 0, count: 100, state: 'pending' },
 					},
 				);
 				dispatch(getReportList(res.data.campaign_reports));

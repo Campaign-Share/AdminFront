@@ -31,7 +31,7 @@ const DiscritionBox = () => {
 				} catch (err) {
 					console.log(err);
 					if (err === 409) {
-						alert('이미 검토한 캠페인입니다.');
+						alert('이미 검토한 캠페인입니다.');//캐치
 					}
 				}
 			} else {

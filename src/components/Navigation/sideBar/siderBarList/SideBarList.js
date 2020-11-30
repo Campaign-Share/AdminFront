@@ -14,7 +14,7 @@ const SideBarList = ({num}) => {
 		<>
 			{ItemList.map((item, index) => {
 				return (
-					<S.ItemBox >
+					<S.ItemBox key={index}>
 						{index === num ? <S.ItemText color={'#707070'}>{item.text}</S.ItemText> : <S.ItemText color={'#FFFFFF'} onClick={()=>{history.push(item.path)}}>{item.text}</S.ItemText>}
 					</S.ItemBox>
 				);

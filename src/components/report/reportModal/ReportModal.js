@@ -50,13 +50,12 @@ const ReportModal = () => {
 					setOnClicked('#808B8B');
 				} else {
 					console.log(res);
-					setOnClicked('#808B8B');
+					setOnClicked('#808B8B');//1
 				}
-				console.log(res);
 			} catch (err) {
 				console.log(err);
 				if (err === 409) {
-					alert('이미 검토한 캠페인입니다.');
+					alert('이미 검토한 캠페인입니다.');//2
 				}
 			}
 		} else {
@@ -72,13 +71,13 @@ const ReportModal = () => {
 					setOnClicked('#808B8B');
 				} else {
 					console.log(res);
-					setOnClicked('#808B8B');
+					setOnClicked('#808B8B');//3
 				}
 				console.log(res);
 			} catch (err) {
 				console.log(err);
 				if (err === 409) {
-					alert('이미 검토한 캠페인입니다.');
+					alert('이미 검토한 캠페인입니다.');//4
 				}
 			}
 		}

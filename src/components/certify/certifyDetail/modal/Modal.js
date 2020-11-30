@@ -33,6 +33,9 @@ const Modal = () => {
 					}
 				} catch (err) {
 					console.log(err);
+					if(err === 409){
+						alert('이미 검토한 캠페인입니다.')
+					}
 				}
 			} else {
 				try {
@@ -43,11 +46,14 @@ const Modal = () => {
 						'post',
 					);
 					if (res.status === 200) {
-						alert('수락되었습니다.');
+						alert('거절되었습니다.');
 						setOnClicked('#808B8B');
 					}
 				} catch (err) {
 					console.log(err);
+					if(err === 409){
+						alert('이미 검토한 캠페인입니다.')
+					}
 				}
 			}
 		})();
