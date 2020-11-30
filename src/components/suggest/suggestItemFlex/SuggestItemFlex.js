@@ -3,8 +3,10 @@ import SuggestItem from '../suggestItem/SuggestItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { requestApiWithAccessToken } from '../../../APIrequest';
 import { setUserInfo } from '../../../modules/CampaginInfoReducer';
-import { getCertifyPerson , getCampaginList} from '../../../modules/CertifyReducer';
-
+import {
+	getCertifyPerson,
+	getCampaginList,
+} from '../../../modules/CertifyReducer';
 import axios from 'axios';
 import * as S from './style';
 import { setList } from '../../../modules/SuggestItemReducer';
@@ -12,13 +14,17 @@ import { setList } from '../../../modules/SuggestItemReducer';
 const SuggestItemFlex = ({ list, useGood }) => {
 	const dispatch = useDispatch();
 	const [length, setLength] = useState({ start: 0, count: 6 });
-	console.log(list);
 	const { nick_name } = useSelector((store) =>
 		useGood ? store.CampaginInfoReducer : store.CertifyReducer,
 	);
-
+	// console.log(list);
 	useEffect(() => {
 		if (length.start === 0) getData();
+		return () => {
+			useGood
+				? dispatch(setList({ start: false }))
+				: dispatch(getCampaginList({ start: false }));
+		};
 	}, []);
 
 	useEffect(() => {
@@ -26,7 +32,7 @@ const SuggestItemFlex = ({ list, useGood }) => {
 		if (user_uuidList.length > 0) {
 			requestApiWithAccessToken(
 				'/v1/users/with-uuids',
-				{user_uuids: user_uuidList},
+				{ user_uuids: user_uuidList },
 				{},
 				'post',
 			).then((res) => {
@@ -38,27 +44,36 @@ const SuggestItemFlex = ({ list, useGood }) => {
 	}, [list, length]);
 
 	const getData = useCallback(async () => {
+		setLength((prev) => ({
+			...prev,
+			start: prev.start + 6,
+			count: prev.count + 6,
+		}));
 		const res = await axios.get(
-			useGood ? 'http://52.79.186.241/v1/campaigns/sorted-by/famous': 'http://52.79.186.241/v1/campaigns/sorted-by/pending-participation',
+			useGood
+				? 'http://52.79.186.241/v1/campaigns/sorted-by/famous'
+				: 'http://52.79.186.241/v1/campaigns/sorted-by/pending-participation',
 			{
 				headers: { Authorization: localStorage.getItem('access_token') },
 				params: { start: length.start, count: length.count, state: 'pending' },
 			},
 		);
-		useGood ? dispatch(setList(res.data.campaigns)) :dispatch(getCampaginList(res.data.campaigns));//useGood
+		useGood
+			? dispatch(setList({ listArr: res.data.campaigns, start: true }))
+			: dispatch(getCampaginList({ listArr: res.data.campaigns, start: true }));
 	}, [length]);
-	
+
 	const handleScroll = useCallback(
 		(e) => {
-			let scrollHeight = Math.max(e.target.scrollHeight, e.target.scrollHeight);
-			let scrollTop = Math.max(e.target.scrollTop, e.target.scrollTop);
-			let clientHeight = e.target.clientHeight;
+			const scrollHeight = Math.max(e.target.scrollHeight, e.target.scrollHeight);
+			const scrollTop = Math.max(e.target.scrollTop, e.target.scrollTop);
+			const clientHeight = e.target.clientHeight;
 			if (Math.ceil(scrollTop) + clientHeight === scrollHeight) {
-				setLength((prev) => ({
-					...prev,
-					start: prev.start + 6,
-					count: prev.count + 6,
-				}));
+				// setLength((prev) => ({
+				// 	...prev,
+				// 	start: prev.start + 6,
+				// 	count: prev.count + 6,
+				// }));
 				getData();
 			}
 		},

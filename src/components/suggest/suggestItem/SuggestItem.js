@@ -16,11 +16,6 @@ const SuggestItem = ({ useGood, listItem, nick_name }) => {
 	const goToCertifyItem = () => {
 		history.push(`./certifyDetail/${listItem.campaign_uuid}`);
 	};
-	// useEffect(() => {
-	// 	dispatch(setCampaginInfo(listItem));
-	// }, []);
-	//원래는 리덕스에다가 상위에서 받아온 listItem 정보를 저장한 후 selector로 참조 -> 전역 상태이기 때문에 마지막으로 들어온 listItem으로 
-	//상태가 초기화되며 기존에 참조하던 리스트의 내용도 변함
 	const {
 		post_uri,
 		campaign_uuid,
