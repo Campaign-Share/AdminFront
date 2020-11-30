@@ -23,8 +23,8 @@ const CertifyDetail = () => {
 					<S.Line />
 					<S.ListContainer>
 						{certifyList.length > 0 &&
-							certifyList.map((ele) => (
-								<List certifyOnModal={certifyOnModal} onModal={onModal} ele={ele}/>
+							certifyList.map((ele, index) => (
+								<List certifyOnModal={certifyOnModal} onModal={onModal} ele={ele} key={index}/>
 							))}
 					</S.ListContainer>
 				</S.Box>

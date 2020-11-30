@@ -16,7 +16,7 @@ const Modal = () => {
 		window.open(
 			`http://campaignshare.s3.ap-northeast-2.amazonaws.com/${evidence_uri}`,
 		);
-	});
+	});	
 	const checkCertify = useCallback((e) => {
 		(async () => {
 			if (e.target.id === 'approve') {

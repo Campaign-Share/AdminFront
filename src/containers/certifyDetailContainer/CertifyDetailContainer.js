@@ -4,6 +4,7 @@ import { requestApiWithAccessToken } from '../../APIrequest';
 import {
 	getCertifyCampagin,
 	getCertifylist,
+	transformModal
 } from '../../modules/CertifyReducer';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
@@ -27,10 +28,10 @@ const CertifyDetailContainer = ({ match }) => {
 				}),
 			);
 			const res = await axios.get(
-				`http://15.164.206.37:80/v1/campaigns/uuid/${match.params.campaginUUID}/participations`,
+				`http://52.79.186.241/v1/campaigns/uuid/${match.params.campaginUUID}/participations`,
 				{
 					headers: { Authorization: localStorage.getItem('access_token') },
-					params: { start: 0, count: 50, state: 'pending' },
+					params: { start: 0, count: 100, state: 'pending' },
 				},
 			);
 			dispatch(getCertifylist(res.data.participations));

@@ -17,7 +17,7 @@ const SuggestItemFlex = ({ list, useGood }) => {
 	const { nick_name } = useSelector((store) =>
 		useGood ? store.CampaginInfoReducer : store.CertifyReducer,
 	);
-	// console.log(list);
+	console.log(list);
 	useEffect(() => {
 		if (length.start === 0) getData();
 		return () => {
